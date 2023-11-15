@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package api;
+option go_package = "pkg/api";
+
+service DirectoryInformer {
+    rpc Dir(DirectoryRequest) returns (DirectoryResponse) {}
+}
+
+message DirectoryRequest {
+    string path = 1;
+}
+
+message DirectoryResponse {
+    bytes directory_info = 1;
+}
